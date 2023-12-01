@@ -3,11 +3,11 @@ package org.example;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "student_db")
+@Table(name = "employee_table")
 public class Employee {
 
-    @Id
-    @GeneratedValue
+    @Id //primary key
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "student_id")
     private int id;
 
@@ -19,6 +19,9 @@ public class Employee {
 
     @Column(name = "email")
     private String email;
+
+    @Column(name = "address")
+    private String address;
 
     public int getId() {
         return id;
