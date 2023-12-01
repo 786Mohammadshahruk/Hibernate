@@ -13,6 +13,6 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
 
-        <mapping class="org.example.Employee"/>
+        <mapping class="org.hibernate.entity.Employee"/>
     </session-factory>
 </hibernate-configuration>

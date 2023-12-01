@@ -1,4 +1,4 @@
-package org.example;
+package org.hibernate.entity;
 
 import jakarta.persistence.*;
 
@@ -19,6 +19,14 @@ public class Employee {
 
     @Column(name = "email")
     private String email;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     @Column(name = "address")
     private String address;
@@ -55,4 +63,14 @@ public class Employee {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }
