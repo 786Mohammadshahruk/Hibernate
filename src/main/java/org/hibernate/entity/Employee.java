@@ -6,6 +6,14 @@ import jakarta.persistence.*;
 @Table(name = "employee_table")
 public class Employee {
 
+    public String getContactNumber() {
+        return contactNumber;
+    }
+
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
+    }
+
     @Id //primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "student_id")
@@ -19,6 +27,9 @@ public class Employee {
 
     @Column(name = "email")
     private String email;
+
+    @Column(name = "contact_number")
+    private String contactNumber;
 
     public String getAddress() {
         return address;
@@ -70,6 +81,7 @@ public class Employee {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
+                ", contactNumber='" + contactNumber + '\'' +
                 ", address='" + address + '\'' +
                 '}';
     }
