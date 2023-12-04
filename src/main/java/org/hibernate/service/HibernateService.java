@@ -3,6 +3,7 @@ package org.hibernate.service;
 import org.hibernate.Session;
 import org.hibernate.entity.Employee;
 import org.hibernate.dao.HibernateDao;
+import org.hibernate.entity.Student;
 
 public class HibernateService {
 
@@ -33,6 +34,12 @@ public class HibernateService {
 
     public void deleteByEmployeeId(int employeeId) {
         hibernateDao.deleteByEmployeeId(employeeId);
+    }
+    public void getEmployeeByIdUsingLoad(int employeeId) {
+        hibernateDao.getEmployeeByIdUsingLoad(employeeId);
+    }
+    public void saveStudent(Student student) {
+        hibernateDao.saveStudent(student);
     }
 
 }

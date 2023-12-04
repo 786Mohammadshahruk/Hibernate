@@ -5,6 +5,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.entity.Student;
 
 import java.util.Objects;
 
@@ -35,10 +36,15 @@ public class HibernateDao {
 
         //creating Session
         Session session = sessionFactory.openSession();
-        Employee employee = session.get(Employee.class, employeeId);
+        Employee employee1 = session.get(Employee.class, employeeId);
+        System.out.println("Employee 1 : " + employee1);
 
-        if (employee != null) {
-            return employee;
+        Employee employee2 = session.get(Employee.class, 1);
+        System.out.println("Employee 2 : " + employee2);
+        employee2.getContactNumber();
+
+        if (employee1 != null) {
+            return employee1;
         } else {
             System.out.println("Employee Does Not Exist with employee Id : " + employeeId);
         }
@@ -109,4 +115,30 @@ public class HibernateDao {
             exception.printStackTrace();
         }
     }
+
+
+    public void getEmployeeByIdUsingLoad(int employeeId) {
+
+        Session session = sessionFactory.openSession();
+        Employee employee = session.load(Employee.class, employeeId);
+        System.out.println("Employee : " + employee);
+
+    }
+
+
+    public void saveStudent(Student student) {
+        Session session = null;
+        try {
+            session = sessionFactory.openSession();
+            Transaction transaction = session.beginTransaction();
+            session.persist(student);
+            transaction.commit();
+            session.close();
+
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
+
+
 }

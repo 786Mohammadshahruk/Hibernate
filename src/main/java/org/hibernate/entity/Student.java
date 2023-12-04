@@ -3,12 +3,12 @@ package org.hibernate.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "employee_table")
-public class Employee {
+@Table(name = "student_table")
+public class Student {
 
     @Id //primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "employee_id")
+    @Column(name = "student_Id")
     private int id;
 
     @Column(name = "first_name")
@@ -23,43 +23,15 @@ public class Employee {
     @Column(name = "contact_number")
     private String contactNumber;
 
-    @Transient
-    @Column(name = "salary")
-    private Double salary;
-
     @Column(name = "address")
-    private String address;
-
-    @Lob
-    private byte[] image;
-
-    public byte[] getImage() {
-        return image;
-    }
-
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-
-    public Double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(Double salary) {
-        this.salary = salary;
-    }
+    private Address address;
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -94,19 +66,23 @@ public class Employee {
         this.contactNumber = contactNumber;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     @Override
     public String toString() {
-        return "Employee{" +
+        return "Student{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", contactNumber='" + contactNumber + '\'' +
-                ", address='" + address + '\'' +
+                ", address=" + address +
                 '}';
     }
 }
