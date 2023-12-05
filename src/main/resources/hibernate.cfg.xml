@@ -13,7 +13,9 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
 
-        <mapping class="org.hibernate.entity.Employee"/>
-        <mapping class="org.hibernate.entity.Student"/>
+        <!--<mapping class="org.hibernate.entity.Employee"/>
+        <mapping class="org.hibernate.entity.Student"/>-->
+        <mapping class="org.hibernate.OneToOne.Person"/>
+        <mapping class="org.hibernate.OneToOne.Order"/>
     </session-factory>
 </hibernate-configuration>
