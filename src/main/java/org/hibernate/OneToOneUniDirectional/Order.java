@@ -1,4 +1,4 @@
-package org.hibernate.OneToOne;
+package org.hibernate.OneToOneUniDirectional;
 
 import jakarta.persistence.*;
 

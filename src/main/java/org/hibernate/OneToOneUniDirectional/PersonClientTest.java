@@ -1,4 +1,4 @@
-package org.hibernate.OneToOne;
+package org.hibernate.OneToOneUniDirectional;
 
 public class PersonClientTest {
     public static void main(String[] args) {

@@ -15,7 +15,9 @@
 
         <!--<mapping class="org.hibernate.entity.Employee"/>
         <mapping class="org.hibernate.entity.Student"/>-->
-        <mapping class="org.hibernate.OneToOne.Person"/>
-        <mapping class="org.hibernate.OneToOne.Order"/>
+        <!--<mapping class="org.hibernate.OneToOneUniDirectional.Person"/>
+        <mapping class="org.hibernate.OneToOneUniDirectional.Order"/>-->
+        <mapping class="org.hibernate.OneToOneMappingBiDirectional.Person"/>
+        <mapping class="org.hibernate.OneToOneMappingBiDirectional.Address"/>
     </session-factory>
 </hibernate-configuration>

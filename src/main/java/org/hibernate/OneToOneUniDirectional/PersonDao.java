@@ -1,6 +1,5 @@
-package org.hibernate.OneToOne;
+package org.hibernate.OneToOneUniDirectional;
 
-import org.hibernate.OneToOne.Person;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -20,15 +19,20 @@ public class PersonDao {
     }
 
     public void createPerson(Person person) {
+        Session session = null;
         try {
-            Session session = sessionFactory.openSession();
+            session = sessionFactory.openSession();
             Transaction transaction = session.beginTransaction();
             session.persist(person);
             transaction.commit();
-            session.close();
+
 
         } catch (Exception exception) {
             exception.printStackTrace();
+        } finally {
+            if (session != null) {
+                session.close();
+            }
         }
 
 
