@@ -7,9 +7,7 @@ public class PersonClientTest {
         //personDao.getPerson(1);
         //personDao.updatePerson(1);
         //personDao.deletePerson(1);
-
-
-        personDao.getAddress(52);
+        //personDao.getAddress(52);
     }
 
     private static Person getPerson() {
