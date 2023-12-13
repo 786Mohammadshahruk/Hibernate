@@ -26,7 +26,8 @@
         <!--<mapping class="org.hibernate.One2Many.Post"/>
         <mapping class="org.hibernate.One2Many.Comment"/>-->
 
-        <mapping class="org.hibernate.manyToMany.Student"/>
-        <mapping class="org.hibernate.manyToMany.Course"/>
+        <!--<mapping class="org.hibernate.manyToMany.Student"/>
+        <mapping class="org.hibernate.manyToMany.Course"/>-->
+        <mapping class="org.hibernate.HQL.Employee"/>
     </session-factory>
 </hibernate-configuration>
