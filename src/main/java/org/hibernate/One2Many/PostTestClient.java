@@ -71,7 +71,7 @@ public class PostTestClient {
      */
     public static void main(String[] args) {
         //CreateOperation
-        createPost(getPost1());
+        //createPost(getPost1());
 
 
         //UpdateOperation

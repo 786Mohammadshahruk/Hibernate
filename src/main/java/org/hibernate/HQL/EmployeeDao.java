@@ -115,6 +115,7 @@ public class EmployeeDao {
             exception.printStackTrace();
         }
     }
+
     public void deleteEmployee(String name) {
         try (Session session = sessionFactory.openSession()) {
 
@@ -132,6 +133,86 @@ public class EmployeeDao {
 
         } catch (Exception exception) {
             exception.printStackTrace();
+        }
+    }
+
+    public void performOperationWithAggregateMaxFunction() {
+
+        try (Session session = sessionFactory.openSession()) {
+
+            String HQL = "SELECT max(salary) from Employee";
+            Query<Object[]> query = session.createQuery(HQL, Object[].class);
+            List<Object[]> objectsList = query.getResultList();
+            objectsList.forEach(i ->
+                    System.out.println("Max Salary of the Employee : " + i[0]));
+
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+
+    }
+
+    public void performOperationWithAggregateMinFunction() {
+
+        try (Session session = sessionFactory.openSession()) {
+
+            String HQLQuery = "SELECT min(salary) from Employee";
+            Query<Object[]> query = session.createQuery(HQLQuery, Object[].class);
+            List<Object[]> objectsList = query.getResultList();
+            objectsList.forEach(i ->
+                    System.out.println("Min Salary of the Employee : " + i[0]));
+
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    public void performOperationWithAggregateCountFunction() {
+
+        try (Session session = sessionFactory.openSession()) {
+
+            String HQLQuery = "SELECT count(e) from Employee e";
+            Query<Object[]> query = session.createQuery(HQLQuery, Object[].class);
+            List<Object[]> objectsList = query.getResultList();
+            objectsList.forEach(i ->
+                    System.out.println("Count Employee : " + i[0]));
+
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    public void performOperationWithListOfAggregateFunctions() {
+
+        try (Session session = sessionFactory.openSession()) {
+            String HQLQuery = "SELECT count(e),min(e.salary),max(e.salary),sum(e.salary),AVG(e.salary) from Employee e";
+            Query<Object[]> query = session.createQuery(HQLQuery, Object[].class);
+            List<Object[]> objectsList = query.getResultList();
+            objectsList.forEach(i -> {
+                System.out.println("Count Employee : " + i[0]);
+                System.out.println("Min Employee salary: " + i[1]);
+                System.out.println("Max Employee Salary : " + i[2]);
+                System.out.println("Sum of Employee Salary : " + i[3]);
+                System.out.println("Avg of Employee Salary : " + i[4]);
+            });
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    public void getAllEmployeeIdAndNames() {
+
+        try (Session session = sessionFactory.openSession()) {
+            String HQL = "select e.id,e.name from Employee e";
+            Query<Object[]> query = session.createQuery(HQL,Object[].class);
+            List<Object[]> objects = query.list();
+            objects.forEach(i->{
+                System.out.println("ID : "+ i[0] + " Name : "+ i[1]);
+            });
+
+
+        } catch (Exception exception) {
+
         }
     }
 
