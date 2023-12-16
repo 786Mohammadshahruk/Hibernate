@@ -28,6 +28,8 @@
 
         <!--<mapping class="org.hibernate.manyToMany.Student"/>
         <mapping class="org.hibernate.manyToMany.Course"/>-->
-        <mapping class="org.hibernate.HQL.Employee"/>
+        <!--<mapping class="org.hibernate.HQL.Employee"/>-->
+        <mapping class="org.hibernate.HQL_JOIN.Employee"/>
+        <mapping class="org.hibernate.HQL_JOIN.Address"/>
     </session-factory>
 </hibernate-configuration>
