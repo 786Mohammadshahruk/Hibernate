@@ -29,7 +29,10 @@
         <!--<mapping class="org.hibernate.manyToMany.Student"/>
         <mapping class="org.hibernate.manyToMany.Course"/>-->
         <!--<mapping class="org.hibernate.HQL.Employee"/>-->
-        <mapping class="org.hibernate.HQL_JOIN.Employee"/>
-        <mapping class="org.hibernate.HQL_JOIN.Address"/>
+        <!--<mapping class="org.hibernate.HQL_JOIN.Employee"/>
+        <mapping class="org.hibernate.HQL_JOIN.Address"/>-->
+        <mapping class="org.hibernate.NamedQuery.Person"/>
+        <mapping class="org.hibernate.NamedQuery.Employee"/>
+        <mapping class="org.hibernate.NamedQuery.Department"/>
     </session-factory>
 </hibernate-configuration>
