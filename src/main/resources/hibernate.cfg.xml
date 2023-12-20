@@ -31,8 +31,11 @@
         <!--<mapping class="org.hibernate.HQL.Employee"/>-->
         <!--<mapping class="org.hibernate.HQL_JOIN.Employee"/>
         <mapping class="org.hibernate.HQL_JOIN.Address"/>-->
-        <mapping class="org.hibernate.NamedQuery.Person"/>
+        <!--<mapping class="org.hibernate.NamedQuery.Person"/>
         <mapping class="org.hibernate.NamedQuery.Employee"/>
-        <mapping class="org.hibernate.NamedQuery.Department"/>
+        <mapping class="org.hibernate.NamedQuery.Department"/>-->
+
+
+        <mapping class="org.hibernate.criteria.Employee"/>
     </session-factory>
 </hibernate-configuration>
